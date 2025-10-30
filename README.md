@@ -44,3 +44,9 @@ A modern Django-based personal portfolio website with project showcase, contact 
 ## Notes
 - Do not commit your `db.sqlite3` or `myenv/` folder.
 - For production, set `DEBUG = False` and update `ALLOWED_HOSTS` in `settings.py`.
+
+---
+
+**New features coming soon!**
+
+This is a simple Django project for 3rd semester students of BPPIMT Salt Lake Campus.

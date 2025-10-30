@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Project, Contact, VisitorLog
+from .models import Project, Contact, VisitorLog, Profile
+
 
 
 import requests
@@ -11,6 +12,7 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
 
 def home(request):
     ip = get_client_ip(request)
@@ -47,7 +49,8 @@ def home(request):
 
     VisitorLog.objects.create(ip_address=ip, isp=isp, system=system, browser=browser)
     projects = Project.objects.all()
-    return render(request, 'home.html', {'projects': projects})
+    profile = Profile.objects.first()
+    return render(request, 'home.html', {'projects': projects, 'profile': profile})
 
 def contact(request):
     if request.method == 'POST':

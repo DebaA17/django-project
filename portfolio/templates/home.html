@@ -27,6 +27,34 @@
 </head>
 <body>
     <div class="container">
+        {% if profile %}
+        <section style="margin-bottom: 32px;">
+            <h1 style="margin-bottom: 10px;">{{ profile.name }}</h1>
+            <p style="font-size:1.1em; color:#555; margin-bottom: 18px;">{{ profile.bio }}</p>
+            {% if profile.get_skills %}
+            <div style="margin-bottom: 14px;">
+                <strong>Skills:</strong>
+                {% for skill in profile.get_skills %}
+                    <span style="display:inline-block; background:#fda085; color:#fff; border-radius:6px; padding:4px 12px; margin:2px 4px 2px 0; font-size:0.98em;">{{ skill }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if profile.education %}
+            <div style="margin-bottom: 14px;"><strong>Education:</strong> {{ profile.education }}</div>
+            {% endif %}
+            {% if profile.achievements %}
+            <div style="margin-bottom: 14px;"><strong>Achievements:</strong> {{ profile.achievements }}</div>
+            {% endif %}
+            {% if profile.get_social_links %}
+            <div style="margin-bottom: 14px;">
+                <strong>Connect:</strong>
+                {% for link in profile.get_social_links %}
+                    <a href="{{ link.url }}" class="project-link" style="margin-right:8px;" target="_blank">{{ link.label }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+        {% endif %}
         <h1>My Projects</h1>
         <ul class="project-list">
             {% for project in projects %}
