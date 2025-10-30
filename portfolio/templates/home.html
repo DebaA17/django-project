@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/static/portfolio/style.css">
+    <script>
+    // Add random sample projects if none exist (for demo only)
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.querySelectorAll('.project-list li').length === 0) {
+            const samples = [
+                {title: 'AI Chatbot', desc: 'A smart chatbot using NLP and Django.', link: 'https://github.com/example/ai-chatbot'},
+                {title: 'Weather App', desc: 'A weather dashboard with animated icons.', link: 'https://github.com/example/weather-app'},
+                {title: 'Portfolio Website', desc: 'A personal portfolio with cool CSS effects.', link: 'https://github.com/example/portfolio'},
+                {title: 'Task Manager', desc: 'A productivity app with drag-and-drop tasks.', link: 'https://github.com/example/task-manager'}
+            ];
+            let ul = document.querySelector('.project-list');
+            samples.forEach(p => {
+                let li = document.createElement('li');
+                li.innerHTML = `<div class='project-title'>${p.title}</div><div class='project-desc'>${p.desc}</div><a class='project-link' href='${p.link}' target='_blank'>View Project</a>`;
+                ul.appendChild(li);
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>My Projects</h1>
+        <ul class="project-list">
+            {% for project in projects %}
+                <li>
+                    <div class="project-title">{{ project.title }}</div>
+                    <div class="project-desc">{{ project.description }}</div>
+                    {% if project.link %}
+                        <a class="project-link" href="{{ project.link }}" target="_blank">View Project</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/contact/" class="add-project-btn">Contact Me</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+# Django Personal Portfolio
+
+A modern Django-based personal portfolio website with project showcase, contact form, and visitor logging (IP, ISP, system, browser, timestamp).
+
+## Features
+- Add/view projects (admin panel)
+- Stylish frontend with animations
+- Contact form
+- Logs visitor info (admin panel)
+
+## Quick Start
+
+1. **Clone the repo:**
+   ```sh
+   git clone https://github.com/DebaA17/django-project.git
+   cd django-project
+   ```
+2. **Create and activate a virtual environment:**
+   ```sh
+   python3 -m venv myenv
+   source myenv/bin/activate
+   ```
+3. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. **Run migrations:**
+   ```sh
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+5. **Create a superuser (optional, for admin):**
+   ```sh
+   python manage.py createsuperuser
+   ```
+6. **Start the server:**
+   ```sh
+   python manage.py runserver
+   ```
+7. **Visit:**
+   - Home: http://127.0.0.1:8000/
+   - Admin: http://127.0.0.1:8000/admin/
+
+## Notes
+- Do not commit your `db.sqlite3` or `myenv/` folder.
+- For production, set `DEBUG = False` and update `ALLOWED_HOSTS` in `settings.py`.

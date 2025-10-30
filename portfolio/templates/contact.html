@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/static/portfolio/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <form method="post" style="margin-top: 24px;">
+            {% csrf_token %}
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 14px; border-radius: 6px; border: 1px solid #eee; font-size: 1em;">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 14px; border-radius: 6px; border: 1px solid #eee; font-size: 1em;">
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required style="width: 100%; padding: 10px; min-height: 90px; border-radius: 6px; border: 1px solid #eee; font-size: 1em; margin-bottom: 18px;"></textarea>
+            <button type="submit" class="add-project-btn" style="width: 100%;">Send</button>
+        </form>
+        <a href="/" class="project-link" style="display: block; text-align: center; margin-top: 24px;">Back to Home</a>
+    </div>
+</body>
+</html>
