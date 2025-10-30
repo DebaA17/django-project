@@ -49,4 +49,6 @@ A modern Django-based personal portfolio website with project showcase, contact 
 
 **New features coming soon!**
 
+**Note:** This is a portfolio template. When you first run the server, the site will show no projects or profile info. Each user must add their own data (projects, bio, skills, education, achievements, and social links) using the Django admin panel at `/admin`.
+
 This is a simple Django project for 3rd semester students of BPPIMT Salt Lake Campus.
