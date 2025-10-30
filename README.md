@@ -1,6 +1,7 @@
-# Django Personal Portfolio
 
-A modern Django-based personal portfolio website with project showcase, contact form, and visitor logging (IP, ISP, system, browser, timestamp).
+# Django Portfolio Template
+
+A modern Django-based portfolio template with project showcase, contact form, and visitor logging (IP, ISP, system, browser, timestamp). Each user can add their own profile, skills, and projects using the admin panel.
 
 ## Features
 - Add/view projects (admin panel)
